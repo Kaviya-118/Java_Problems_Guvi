@@ -1,0 +1,30 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        System.out.println(getIndex(arr));
+    }
+    static int getIndex(int[] arr) {
+        int n = arr.length;
+        List<Integer> breaks = new ArrayList<>();
+        for (int i = 0; i < n - 1; i++) {
+            if (arr[i] >= arr[i + 1]) {
+                breaks.add(i);
+            }
+        }
+        if (breaks.size() == 0) return -1;
+        if (breaks.size() > 1) return -1;
+        int i = breaks.get(0);
+        if (i == 0 || arr[i - 1] < arr[i + 1]) {
+            return i;
+        }
+        if (i + 2 >= n || arr[i] < arr[i + 2]) {
+            return i + 1; 
+        return -1;
+    }
+}

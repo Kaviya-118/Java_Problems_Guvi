@@ -1,0 +1,17 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int userInput = obj.nextInt();
+        int rev;
+        while(userInput>0){
+            rev=userInput%10;
+            userInput/=10;
+            if(rev==0){
+                continue;
+            }
+            System.out.print(rev);
+        }
+        
+    }
+}

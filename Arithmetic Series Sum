@@ -1,0 +1,14 @@
+import java.util.*;
+import java.math.BigInteger;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        BigInteger a = sc.nextBigInteger();
+        BigInteger d = sc.nextBigInteger();
+        BigInteger n = sc.nextBigInteger();
+        BigInteger two = BigInteger.valueOf(2);
+        BigInteger term = a.multiply(two).add(n.subtract(BigInteger.ONE).multiply(d));
+        BigInteger sum = n.multiply(term).divide(two);
+        System.out.print(sum);
+    }
+}
